@@ -22,6 +22,12 @@ const images = [
 
 export default function Home() {
   return (
+    <>
+    <head>
+      <title>Home Page</title>
+      <meta name="description" content="Welcome to the home page!"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
     <div className="min-h-screen bg-gradient-to-r from-blue-50 via-white to-blue-50 p-8">
       <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-10">
         Welcome to the Home Page
@@ -70,5 +76,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Head from "next/head";
 
 function PostsDetails({ params }) {
   const { id } = params; 
@@ -27,6 +28,13 @@ function PostsDetails({ params }) {
   if (error) return <p>Error: {error}</p>;
 
   return (
+    <>
+    <Head>
+        <title>{post.title}</title>
+        <meta name="description" content={post.body.slice(0, 150)} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.body.slice(0, 150)} />
+      </Head>
     <div className="min-h-screen bg-gradient-to-r from-green-50 via-white to-green-50 p-8 flex items-center justify-center">
       <div className="max-w-lg w-full bg-white rounded-lg shadow-lg p-6 transform transition-all duration-300 hover:scale-105">
         <div className="text-center mb-6">
@@ -43,6 +51,7 @@ function PostsDetails({ params }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
